@@ -6,6 +6,7 @@
 @import url(./product.css);
 @import url(./brouser.css);
 @import url(./adicional.css);
+@import url(./modal.css);
 
 body {
 	font-family: 'Poppins', sans-serif;
