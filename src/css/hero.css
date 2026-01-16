@@ -8,6 +8,9 @@
 
 .hero{
   background-image: url(/src/assets/banner/banner.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
 }
 
 
