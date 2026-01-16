@@ -1,0 +1,49 @@
+.brand-bar {
+  background-color: #000;
+  /* Fundo preto */
+  padding: 40px 0;
+  /* Espaçamento vertical */
+  width: 100%;
+}
+
+.container-brands {
+  max-width: 1240px;
+  /* Alinhado com o header anterior */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  /* Distribui as marcas uniformemente */
+  align-items: center;
+  flex-wrap: wrap;
+  /* Permite quebra de linha em telas pequenas */
+  gap: 20px;
+}
+
+.container-brands img {
+  height: auto;
+  /* Ajuste a altura conforme necessário */
+  width: auto;
+  /* Se os seus logos forem pretos, a linha abaixo os torna brancos: */
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  /* Toque opcional para um visual mais sutil */
+  transition: opacity 0.3s;
+}
+
+.container-brands img:hover {
+  opacity: 1;
+  /* Brilha ao passar o mouse */
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+  .container-brands {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .container-brands img {
+    height: 25px;
+    /* Diminui um pouco o tamanho no mobile */
+  }
+}

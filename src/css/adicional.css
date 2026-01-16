@@ -1,0 +1,166 @@
+/* DEPOIMENTOS */
+.clientes-secao {
+  max-width: 1650px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.clientes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.clientes-titulo {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 2.5rem;
+}
+
+.clientes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cliente-card {
+  border: 1px solid #E0E0E0;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.cliente-nome {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.check-icon {
+  background: #01AB31;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  padding: 2px 5px;
+}
+
+.cliente-texto {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* FOOTER E NEWSLETTER */
+.rodape-principal {
+  background-color: #F0F0F0;
+  padding-top: 150px;
+  /* Espaço para o banner sobreposto */
+  margin-top: 150px;
+  position: relative;
+}
+
+.newsletter-banner {
+  background-color: #000;
+  color: #fff;
+  max-width: 1650px;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 40px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+}
+
+.newsletter-banner h2 {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 2.2rem;
+  max-width: 500px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 350px;
+}
+
+.newsletter-form input {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: none;
+}
+
+.btn-newsletter {
+  background-color: #fff;
+  color: #000;
+  padding: 12px;
+  border-radius: 50px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* CONTEÚDO DO RODAPÉ */
+.rodape-conteudo {
+  max-width: 1650px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  padding: 50px 20px;
+}
+
+.rodape-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.links-col h4 {
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.links-col a {
+  display: block;
+  color: #666;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+.rodape-bottom {
+  max-width: 1650px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.rodape-bottom ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom-flex {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  color: #666;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+
+  .clientes-grid,
+  .rodape-conteudo,
+  .rodape-links {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-banner {
+    flex-direction: column;
+    text-align: center;
+    top: -150px;
+  }
+}
