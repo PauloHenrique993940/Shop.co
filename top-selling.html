@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Selling - Shop.co</title>
+  <link rel="stylesheet" href="./src/css/global.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./src/css/checkoutModal.css" />
+</head>
+
+<body>
+  <div class="menu-overlay" id="overlay"></div>
+  <div class="top-bar">
+    <span class="message">Sign up and get 20% off your first order.
+      <a href="#" class="top-bar-link">Sign Up Now</a>
+    </span>
+    <button class="close">✕</button>
+  </div>
+  <header class="navbar">
+    <div class="container">
+      <button class="menu-mobile-btn" id="menuBtn">☰</button>
+      <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">SHOP.CO</a></div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#">Shop <span class="arrow"></span></a>
+        <a href="#">On Sale</a>
+        <a href="new-arrivals.html">New Arrivals</a>
+        <a href="#">Brands</a>
+      </nav>
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search for products..." />
+      </div>
+      <div class="actions">
+        <button class="icon-btn" id="cart-icon-btn">🛒</button>
+        <button class="icon-btn">👤</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 40px 20px;">
+    <section class="new-arrivals">
+      <h1 class="section-title">TOP SELLING</h1>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="image-container">
+            <img src="./src/assets/topSeling/camisalistrada_mangalonga.png" alt="Camisa listrada manga longa" />
+          </div>
+          <h3 class="product-name">VERTICAL STRIPED SHIRT</h3>
+          <div class="rating">⭐⭐⭐⭐⭐ <span>5.0/5</span></div>
+          <p class="price">$212</p>
+        </div>
+        <div class="product-card highlighted">
+          <div class="image-container">
+            <img src="./src/assets/topSeling/camisaLaranja.png" alt="Camisa courage" />
+          </div>
+          <h3 class="product-name">COURAGE GRAPHIC T-SHIRT</h3>
+          <div class="rating">⭐⭐⭐☆☆ <span>4.0/5</span></div>
+          <p class="price">
+            $145 <span class="old-price">$260</span>
+            <span class="discount">-20%</span>
+          </p>
+        </div>
+        <div class="product-card">
+          <div class="image-container">
+            <img src="./src/assets/topSeling/bermuda.png" alt="Bermuda Jeans" />
+          </div>
+          <h3 class="product-name">LOOSE FIT BERMUDA SHORTS</h3>
+          <div class="rating">⭐⭐⭐⭐⭐ <span>4.5/5</span></div>
+          <p class="price">$80</p>
+        </div>
+        <div class="product-card">
+          <div class="image-container">
+            <img src="./src/assets/topSeling/calcajeans.png" alt="Calça jeans preta" />
+          </div>
+          <h3 class="product-name">FADED SKINNY JEANS</h3>
+          <div class="rating">⭐⭐⭐⭐⭐ <span>4.5/5</span></div>
+          <p class="price">
+            $210 <span class="old-price">$160</span>
+            <span class="discount">-30%</span>
+          </p>
+        </div>
+        <!-- Duplicating products -->
+        <div class="product-card">
+          <div class="image-container">
+            <img src="./src/assets/topSeling/camisalistrada_mangalonga.png" alt="Camisa listrada manga longa" />
+          </div>
+          <h3 class="product-name">VERTICAL STRIPED SHIRT</h3>
+          <div class="rating">⭐⭐⭐⭐⭐ <span>5.0/5</span></div>
+          <p class="price">$212</p>
+        </div>
+        <div class="product-card">
+          <div class="image-container">
+            <img src="./src/assets/topSeling/calcajeans.png" alt="Calça jeans preta" />
+          </div>
+          <h3 class="product-name">FADED SKINNY JEANS</h3>
+          <div class="rating">⭐⭐⭐⭐⭐ <span>4.5/5</span></div>
+          <p class="price">
+            $210 <span class="old-price">$160</span>
+            <span class="discount">-30%</span>
+          </p>
+        </div>
+        <div class="product-card highlighted">
+          <div class="image-container">
+            <img src="./src/assets/topSeling/camisaLaranja.png" alt="Camisa courage" />
+          </div>
+          <h3 class="product-name">COURAGE GRAPHIC T-SHIRT</h3>
+          <div class="rating">⭐⭐⭐☆☆ <span>4.0/5</span></div>
+          <p class="price">
+            $145 <span class="old-price">$260</span>
+            <span class="discount">-20%</span>
+          </p>
+        </div>
+        <div class="product-card">
+          <div class="image-container">
+            <img src="./src/assets/topSeling/bermuda.png" alt="Bermuda Jeans" />
+          </div>
+          <h3 class="product-name">LOOSE FIT BERMUDA SHORTS</h3>
+          <div class="rating">⭐⭐⭐⭐⭐ <span>4.5/5</span></div>
+          <p class="price">$80</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-body">
+        <div class="modal-image">
+          <img id="modalImg" src="" alt="" />
+        </div>
+        <div class="modal-info">
+          <h2 id="modalTitle">Nome do Produto</h2>
+          <div id="modalRating" class="rating"></div>
+          <p id="modalPrice" class="price"></p>
+          <p class="description">
+            Esta é uma peça de alta qualidade da Shop.co, perfeita para o seu
+            estilo.
+          </p>
+          <div class="modal-actions">
+            <div class="quantity-selector">
+              <button onclick="changeQty(-1)">-</button>
+              <input type="number" id="modalQty" value="1" min="1" />
+              <button onclick="changeQty(1)">+</button>
+            </div>
+            <button id="addToCartBtn" class="btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="cartBadge" style="display: none; position: absolute; top: 0; right: 0; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 10px;">
+  0</div>
+  <div id="checkoutModal" class="checkout-modal">
+    <div class="checkout-modal-content">
+        <span class="checkout-close-modal">&times;</span>
+        <h2>Resumo do Carrinho</h2>
+        <div id="checkout-items-list"></div>
+        <div id="checkout-total"></div>
+        <div class="payment-options">
+            <h3>Selecione o Pagamento</h3>
+            <div class="payment-icons">
+                <img src="./src/assets/icones/visa.png" alt="Visa" data-method="visa">
+                <img src="./src/assets/icones/mastercard.png" alt="Mastercard" data-method="mastercard">
+                <img src="./src/assets/icones/paypal.png" alt="Paypal" data-method="paypal">
+                <img src="./src/assets/icones/pay.png" alt="Apple Pay" data-method="apple-pay">
+            </div>
+        </div>
+        <button id="checkout-btn">Finalizar Compra</button>
+    </div>
+</div>
+
+  <footer class="rodape-principal">
+    <div class="newsletter-banner">
+      <h2>STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
+      <form class="newsletter-form" id="newsletterForm">
+        <div class="input-container">
+          <input type="email" id="newsletterEmail" placeholder="Enter your email address" />
+        </div>
+        <button type="submit" class="btn-newsletter">Subscribe to Newsletter</button>
+      </form>
+    </div>
+    <div class="rodape-conteudo">
+      <div class="rodape-info">
+        <h3 class="logo">SHOP.CO</h3>
+        <p>
+          We have clothes that suits your style and which you're proud to
+          wear. From women to men.
+        </p>
+        <div class="redes-sociais">
+          <span>𝕏</span> <span>f</span> <span>i</span> <span>github</span>
+        </div>
+      </div>
+      <div class="rodape-links">
+        <div class="links-col">
+          <h4>COMPANY</h4>
+          <a href="#">About</a><a href="#">Features</a><a href="#">Works</a><a href="#">Career</a>
+        </div>
+        <div class="links-col">
+          <h4>HELP</h4>
+          <a href="#">Customer Support</a><a href="#">Delivery Details</a><a href="#">Terms & Conditions</a><a
+            href="#">Privacy Policy</a>
+        </div>
+        <div class="links-col">
+          <h4>FAQ</h4>
+          <a href="#">Account</a><a href="#">Manage Deliveries</a><a href="#">Orders</a><a href="#">Payments</a>
+        </div>
+        <div class="links-col">
+          <h4>RESOURCES</h4>
+          <a href="#">Free eBooks</a><a href="#">Development Tutorial</a><a href="#">How to - Blog</a><a
+            href="#">Youtube Playlist</a>
+        </div>
+      </div>
+    </div>
+    <div class="rodape-bottom">
+      <hr />
+      <div class="bottom-flex">
+        <p>Shop.co © 2000-2029, All Rights Reserved</p>
+        <div class="pagamentos">
+          <ul>
+            <li><a href="#"><img src="./src/assets/icones/visa.png" alt="Visa" /></a></li>
+            <li><a href="#"><img src="./src/assets/icones/mastercard.png" alt="Visa" /></a></li>
+            <li><a href="#"><img src="./src/assets/icones/paypal.png" alt="Visa" /></a></li>
+            <li><a href="#"><img src="./src/assets/icones/pay.png" alt="Visa" /></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./src/js/main.js" defer></script>
+</body>
+
+</html>

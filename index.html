@@ -10,6 +10,7 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="./src/css/checkoutModal.css" />
 </head>
 
 <body>
@@ -40,7 +41,7 @@
       </div>
 
       <div class="actions">
-        <button class="icon-btn">🛒</button>
+        <button class="icon-btn" id="cart-icon-btn">🛒</button>
         <button class="icon-btn">👤</button>
       </div>
     </div>
@@ -135,7 +136,7 @@
     </div>
 
     <div class="view-all-container">
-      <button class="view-all-btn">View All</button>
+      <a href="new-arrivals.html" class="view-all-btn">View All</a>
     </div>
   </section>
   <hr />
@@ -187,7 +188,7 @@
     </div>
 
     <div class="view-all-container">
-      <button class="view-all-btn">View All</button>
+      <a href="top-selling.html" class="view-all-btn">View All</a>
     </div>
   </section>
   <section class="estilos-secao">
@@ -280,15 +281,36 @@
   <div id="cartBadge" style="display: none; position: absolute; top: 0; right: 0; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 10px;">
   0</div>
 
+  <div id="checkoutModal" class="checkout-modal">
+    <div class="checkout-modal-content">
+        <span class="checkout-close-modal">&times;</span>
+        <h2>Resumo do Carrinho</h2>
+        <div id="checkout-items-list">
+            <!-- Itens do carrinho serão inseridos aqui -->
+        </div>
+        <div id="checkout-total"></div>
+        <div class="payment-options">
+            <h3>Selecione o Pagamento</h3>
+            <div class="payment-icons">
+                <img src="./src/assets/icones/visa.png" alt="Visa" data-method="visa">
+                <img src="./src/assets/icones/mastercard.png" alt="Mastercard" data-method="mastercard">
+                <img src="./src/assets/icones/paypal.png" alt="Paypal" data-method="paypal">
+                <img src="./src/assets/icones/pay.png" alt="Apple Pay" data-method="apple-pay">
+            </div>
+        </div>
+        <button id="checkout-btn">Finalizar Compra</button>
+    </div>
+</div>
+
   <footer class="rodape-principal">
     <div class="newsletter-banner">
       <h2>STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
-      <div class="newsletter-form">
+      <form class="newsletter-form" id="newsletterForm">
         <div class="input-container">
-          <input type="email" placeholder="Enter your email address" />
+          <input type="email" id="newsletterEmail" placeholder="Enter your email address" />
         </div>
-        <button class="btn-newsletter">Subscribe to Newsletter</button>
-      </div>
+        <button type="submit" class="btn-newsletter">Subscribe to Newsletter</button>
+      </form>
     </div>
 
     <div class="rodape-conteudo">
@@ -348,86 +370,7 @@
       </div>
     </div>
   </footer>
-  <script>
-    // Seletores de Elementos
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-    const overlay = document.getElementById('overlay');
-    const modal = document.getElementById('productModal');
-    const closeModal = document.querySelector('.close-modal');
-    const cartIcon = document.querySelector('.icon-btn'); // Primeiro botão de ícone (carrinho)
-
-    let cartCount = 0;
-
-    // --- LÓGICA DO MENU (Existente) ---
-    function toggleMenu() {
-      navLinks.classList.toggle('active');
-      overlay.classList.toggle('active');
-      menuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-    }
-    menuBtn.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', toggleMenu);
-
-    // --- LÓGICA DO MODAL ---
-
-    // Adiciona evento de clique em todos os cards de produto
-    document.querySelectorAll('.product-card').forEach((card) => {
-      card.addEventListener('click', () => {
-        const name = card.querySelector('.product-name').innerText;
-        const price = card.querySelector('.price').innerText;
-        const imgSrc = card.querySelector('img').src;
-        const rating = card.querySelector('.rating').innerHTML;
-
-        openModal(name, price, imgSrc, rating);
-      });
-    });
-
-    function openModal(name, price, img, rating) {
-      document.getElementById('modalTitle').innerText = name;
-      document.getElementById('modalPrice').innerText = price;
-      document.getElementById('modalImg').src = img;
-      document.getElementById('modalRating').innerHTML = rating;
-      document.getElementById('modalQty').value = 1;
-
-      modal.style.display = 'flex';
-    }
-
-    closeModal.onclick = () => (modal.style.display = 'none');
-    window.onclick = (event) => {
-      if (event.target == modal) modal.style.display = 'none';
-    };
-
-    // --- LÓGICA DO CARRINHO ---
-
-    function changeQty(value) {
-      const input = document.getElementById('modalQty');
-      let current = parseInt(input.value);
-      if (current + value >= 1) {
-        input.value = current + value;
-      }
-    }
-
-    document.getElementById('addToCartBtn').addEventListener('click', () => {
-      const qty = parseInt(document.getElementById('modalQty').value);
-      const productName = document.getElementById('modalTitle').innerText;
-
-      cartCount += qty;
-
-      // Feedback visual
-      alert(`${qty}x ${productName} adicionado ao carrinho!`);
-      updateCartIcon();
-      modal.style.display = 'none';
-    });
-
-    function updateCartIcon() {
-      // Adiciona ou atualiza o contador no ícone de carrinho
-      let badge = document.getElementById('cartBadge');
-      cartIcon.style.position = 'relative';
-      cartIcon.appendChild(badge);
-      badge.style.display = 'block';
-      badge.innerText = cartCount;
-    }
-  </script>
+  <script src="./src/js/main.js" defer></script>
 </body>
 
 </html>
